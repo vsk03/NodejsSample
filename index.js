@@ -1,13 +1,17 @@
-var express = require('express')
-var app = express()
+const http = require('http')
+const port = 3000
 
-app.set('port', (process.env.PORT || 5000))
-app.use(express.static(__dirname + '/public'))
+const requestHandler = (request, response) => {
+  console.log(request.url)
+  response.end('Hello Node.js Server!')
+}
 
-app.get('/', function(request, response) {
-  response.send('Hello Guys!!!') 
-})
+const server = http.createServer(requestHandler)
 
-app.listen(app.get('port'), function() {
-  console.log("Node app is running at localhost:" + app.get('port'))
+server.listen(port, (err) => {
+  if (err) {
+    return console.log('something bad happened', err)
+  }
+
+  console.log(`server is listening on ${port}`)
 })
