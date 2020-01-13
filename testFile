@@ -1,1 +1,4 @@
-HI this is a test file to commit and then uncommit this file from local. 
+HI this is a test file to commit and then uncommit this file from local.
+
+here i am done with successful 
+1. git reset --hard HEAD^ to undo local commit before pushing the code to remote.
